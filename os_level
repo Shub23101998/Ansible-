@@ -1,0 +1,15 @@
+---
+-host: Private
+ become : true
+
+  task :
+   -name : installation of git 
+    apt : name = git state = present
+    when : ansible_os_familt == 'Debion'
+    ignore_error : true
+
+  -name : installation of git 
+    apt : name = git state = present
+    when : ansible_os_familt == 'RedHat'
+    ignore_error : true
+    
